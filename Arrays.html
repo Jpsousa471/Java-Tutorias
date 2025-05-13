@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arays</title>
+</head>
+<body>
+   <div class="oia">
+  
+   </div>
+    
+
+    <script>
+
+        const total = 0
+        const box = document.querySelector(".oia");
+        const list = document.createElement("ul");
+        const para = document.createElement("p");
+        list.innerHTML = "";
+        para.textContent = "";
+        box.appendChild(list);
+        list.appendChild(para);
+
+
+        const products = [
+                'Underpants:6.99',
+                'Socks:5.99',
+                'T-shirt:14.99',
+                'Trousers:31.99',
+                'Shoes:23.99'
+        ]
+
+
+        for (var i = 0; i < products.length; i++){
+
+            const subArray = products[i].split(":");
+            // split está dividindo o array, usando como parametro o dois pontos/:
+            const name = subArray[0];
+            const price = Number(subArray[1]);
+            itemText = name + '- R$' + price;
+            const lisItem = document.createElement("li");
+            lisItem.textContent = itemText;
+            list.appendChild(lisItem);
+
+        }
+
+        para.textContent = 'Total - R$' + total;
+
+       
+    </script>
+</body>
+</html>

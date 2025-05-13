@@ -1,0 +1,21 @@
+
+div{
+    width: 100%;
+    height: 100%;
+    display: block;
+    justify-content: center;
+}
+
+ul {
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+li {
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+    display: block;
+    border: 2px solid black;
+}

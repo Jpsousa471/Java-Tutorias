@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <div class="section">
+      <!-- <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p> -->
+    </div>
+    
+    <script>
+
+    //   const cat = {
+    //     name : 'Bertie',
+    //     breed : 'Cymric',
+    //     color : 'white',
+    //     greeting: function() {
+    //       console.log(`Hello, said ${this.name} the ${this.breed}.`);
+    //     }
+    // }
+ 
+    
+    // const cat2 = {
+    //     name : 'Julia',
+    //     breed : 'Malta',
+    //     color : 'Yellow',
+    //     greeting: function() {
+    //       console.log(`Hello, said ${this.name} the ${this.breed}. With color ${this.color}`);
+    //     }
+    // }
+
+      // console.log(cat2.greeting())
+
+      /// Método DRY - Não repetir///
+
+      function Cat(name, breed, color) {
+        this.name = name;
+        this.breed = breed;
+        this.color = color;
+      }
+
+      Cat.prototype.greeting = function() {
+        console.log(`Hello, said ${this.name} the ${this.breed} whith color ${this.color}.`)
+      }
+
+      const cat = new Cat("Bertie", "Cymric", "White");
+      const cat2 = new Cat("Julia", "Malta", "Yellow");      
+
+      cat.greeting();
+      cat2.greeting();
+        // Put your code here
+
+        var section = document.querySelector(".section")
+        var btn = document.createElement("button");
+        btn.style.width = "30px";
+        btn.style.height = "30px";
+        section.appendChild(btn);
+
+        // atualizando o valor da cor
+        btn.onclick = function(){
+          cat.color = 'Black'
+          paras.textContent = `The cat's color is ${ cat.color }.`;
+        }
+
+        // Don't edit the code below here
+       
+        let para = document.createElement("p");
+        let paras = document.createElement("p");
+
+        // para.textContent = `The cat's name is ${ cat.name }`;
+        para.textContent = cat.greeting();
+        // paras.textContent =  cat.color;
+        paras.textContent = `The cat's color is ${ cat.color }.`;
+
+        section.appendChild(para);
+        section.appendChild(paras);
+
+        /// Banda ///
+
+        const banda = {
+          name: "Imaginie Dragons",
+          nationality: "USA",
+          genre: "Pop/Rock",
+          members: 5,
+          formed: 2009,
+          split: 2025,
+          albums: ["Radioactive:2009","Demons:2010","Nature:2018"]
+        }
+        i = 0;
+        const dividir = banda.albums[i].split(":");
+        const album = dividir[0];
+        const ano = Number(dividir[1]);
+
+        let bandInfo = "o nome da banda é K, criada nos O no ano de D e atuando até os dia de hoje em B. São do estilo L, seu primeiro albúm foi o I lançado em J.";
+
+        bandInfo = bandInfo.replace("K", banda.name);
+        bandInfo = bandInfo.replace("O", banda.nationality);
+        bandInfo = bandInfo.replace("D", banda.formed);
+        bandInfo = bandInfo.replace("D", banda.formed);
+        bandInfo = bandInfo.replace("B", banda.split);
+        bandInfo = bandInfo.replace("L", banda.genre);
+        bandInfo = bandInfo.replace("I", album);
+        bandInfo = bandInfo.replace("I", album);
+        bandInfo = bandInfo.replace("J", ano);
+        
+        
+        // Put your code here
+
+
+        // Don't edit the code below here
+
+        let para1 = document.createElement('p');
+        para1.textContent = bandInfo;
+        section.appendChild(para1);
+            
+    
+    </script>
+  </body>
+
+</html>

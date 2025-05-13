@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    
+
+
+    <div id="section" style="display: flex;justify-content: center; width: 50%; height: 100px; background-color: red; color: blue;"></div>
+   
+    <script >
+
+            const section = document.getElementById("section");
+            
+            // Add your code here
+
+            let myName = 'Default';
+            myName = 'Chris';
+
+            let myAge = 42;
+
+            // Don't edit the code below here!
+
+            section.innerHTML = ' ';
+            const para1 = document.createElement('p');
+            const para2 = document.createElement('p');
+            para1.textContent = myName;
+            para2.textContent = `In 20 years, I will be ${myAge + 20}`;
+            section.appendChild(para1);
+            section.appendChild(para2);
+                
+    </script>
+
+</body>
+</html>
