@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="lapa">
+
+    </div>
+
+    <script>
+                
+        let machineActive = true;
+        let pwd = 'cheese';
+
+        let machineResult;
+        let pwdResult;
+
+        // Add your code here
+
+        const section = document.querySelector('.lapa');
+
+        if(machineActive === true){
+            machineResult = 'A máquina está ligada'
+            // if (pwd === 'cheese'){
+            //     pwdResult = 'Login feito com sucesso!'
+            // } else if(pwd != 'cheese'){
+            //     pwdResult = 'Erro no login'
+            // }
+
+            const result = {
+               cheese :  'Login feito com sucesso!'
+            }
+            pwdResult = result[pwd] || 'Erro no login';
+            
+
+
+
+
+            } else {
+                machineResult = 'ligue a máquina!'
+            }
+
+        // Don't edit the code below here!
+
+        section.innerHTML = ' ';
+        let para1 = document.createElement('p');
+        let para2 = document.createElement('p');
+
+        para1.textContent = machineResult;
+        para2.textContent = pwdResult;
+
+        section.appendChild(para1);
+        section.appendChild(para2);
+            
+    </script>
+
+</body>
+</html>

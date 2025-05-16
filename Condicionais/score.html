@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <div class="la">
+
+    </div>
+
+
+    <script>
+        
+        let response;
+        let score = 1;
+        let machineActive = true;
+
+        // Add your code here
+
+        if(machineActive === true){
+            if(score < 0 || score > 100){
+                response = "Isso não é possível, ocorreu um erro.";
+            } else if (score >= 0 && score <= 19){
+                response = "Essa foi uma nota terrível — reprovação total!";
+            } else if(score >= 20 && score <= 39){
+                response = "Você sabe algumas coisas, mas a pontuação é bem ruim. Precisa melhorar.";
+            } else if(score >= 40 && score <= 69){
+                response = "Você fez um trabalho razoável, nada mal!";
+            } else if(score >= 70 && score <= 89){
+                response = "Essa é uma ótima pontuação, você realmente entende do assunto.";
+            } else if(score >= 90 && score <= 100){
+                response =  "Que pontuação incrível! Você trapaceou? É sério?";
+            };
+
+        } else{
+            response = 'Ligue a máquina';
+        };
+
+        const section = document.querySelector('.la')
+
+
+        // Don't edit the code below here!
+
+        section.innerHTML = ' ';
+        let para1 = document.createElement('p');
+        let para2 = document.createElement('p');
+
+        para1.textContent = `Your score is ${ score }`;
+        para2.textContent = response;
+
+        section.appendChild(para1);
+        section.appendChild(para2);
+            
+    </script>
+</body>
+</html>
