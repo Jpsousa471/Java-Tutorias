@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Events: Task 3</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      button {
+        display: block;
+        margin: 20px 0 20px 20px;
+      }
+
+      .button-bar {
+        padding: 20px 0;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+    </section>
+
+    <div class="button-bar">
+      <button data-color="red">Red</button>
+      <button data-color="yellow">Yellow</button>
+      <button data-color="green">Green</button>
+      <button data-color="purple">Purple</button>
+    </div>
+
+  <script>
+
+    const buttonBar = document.querySelector('.button-bar');
+
+    buttonBar.addEventListener('click', (event) => {
+  if (event.target.tagName === 'BUTTON') {
+    const color = event.target.getAttribute('data-color');
+    buttonBar.style.backgroundColor = color;
+  }
+});
+
+
+// ## Explicação
+// - O código adiciona um evento click ao elemento .button-bar.
+// - Quando o evento é acionado, o código verifica se o elemento clicado é um botão (BUTTON).
+// - Se for um botão, o código obtém o valor do atributo data-color do botão e define a cor de fundo do .button-bar para essa cor.
+
+// ## Vantagem
+// - Essa abordagem é mais eficiente do que adicionar um evento a cada botão individualmente, especialmente se houver muitos botões.
+// - Além disso, se novos botões forem adicionados dinamicamente, o evento continuará funcionando sem precisar adicionar novos ouvintes.
+
+  // Add your code here
+
+  </script>
+  </body>
+</html>

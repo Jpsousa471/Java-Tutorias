@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Loop</title>
+</head>
+<body>
+
+      <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+
+    <div>
+
+    </div>
+    
+    <script>
+
+        const box = document.querySelector('div');
+        const para = document.createElement('p');
+        box.appendChild(para);
+
+        const name = 'Li Kang';
+
+          const phonebook = [
+            { name : 'Chris', number : '1549' },
+            { name : 'Li Kang', number : '9634' },
+            { name : 'Anne', number : '9065' },
+            { name : 'Francesca', number : '3001' },
+            { name : 'Mustafa', number : '6888' },
+            { name : 'Tina', number : '4312' },
+            { name : 'Bert', number : '7780' },
+            { name : 'Jada', number : '2282' },
+            ]
+
+        let encontrado = false;
+
+        i = 0;
+        while(i <phonebook.length ){
+
+            if(phonebook[i].name === name){
+                para.textContent = `${phonebook[i].name}: ${phonebook[i].number}`
+                encontrado = true;
+
+                break;
+            }
+
+            i++
+        }
+
+        if(!encontrado){
+            para.textContent = `${name} não encontrado`
+        }
+
+    </script>
+
+</body>
+</html>
+
+<!-- ## Explicação
+- O loop for percorre o array phonebook e verifica se o nome atual é igual ao nome procurado.
+- Se o nome for encontrado, o código exibe o nome e o número de telefone no parágrafo para e sai do loop usando break.
+- Se o nome não for encontrado após percorrer todo o array, o código exibe uma mensagem de não encontrado. -->

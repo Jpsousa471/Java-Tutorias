@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número par?</title>
+</head>
+<body>
+    
+    <div>
+
+    </div>
+
+    <script>
+
+        let number1 = 1;
+        let number2 = 1;
+        let number3 = 2;
+        let number4 = 1;    
+        
+        let sumResult = number1+ number2;
+        let subResult = number3 - number4;
+        let finalResult = sumResult * subResult;
+        let evenOddResult = finalResult %2; //Verificando se o número é par 
+
+        const section = document.querySelector('div');
+
+        // Add your code here
+
+        // Don't edit the code below here!
+
+        section.innerHTML = ' ';
+        const para1 = document.createElement('p');
+        const finalResultCheck = finalResult === 48 ? `Yes, well done!` : `No, it is ${ finalResult }`;
+        para1.textContent = `Is the finalResult 48? ${ finalResultCheck }`;
+        const para2 = document.createElement('p');
+        const evenOddResultCheck = evenOddResult === 0 ? 'The final result is even!' : 'The final result is odd. Hrm.';
+        para2.textContent = evenOddResultCheck;
+
+        section.appendChild(para1);
+        section.appendChild(para2);
+    
+    </script>
+
+</body>
+</html>
+
+<!-- ## Explicação
+- Criei quatro variáveis ​​num1, num2, num3 e num4 com valores numéricos.
+- Somei num1 e num2 e armazenei o resultado em sumResult.
+- Subtraí num4 de num3 e armazenei o resultado em subResult.
+- Multipliquei sumResult e subResult e armazenei o resultado em finalResult.
+- Verifiquei se finalResult é um número par usando o operador % (módulo) e armazenei o resultado em evenOddResult.
+
+## Nota
+- O operador % retorna o resto da divisão de um número por outro. Se o resto for 0, o número é par. Caso contrário, é ímpar. -->

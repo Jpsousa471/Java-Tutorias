@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Loop Inp</title>
+</head>
+<body>
+
+      <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+
+    <div class="preview">
+        <input id="nome" type="text" placeholder="Digte seu nome"/>
+        <button id="pesquisar">Pesquisar</button>
+        <p id="resultado"></p>
+    </div>
+    
+    <script>
+
+        const box = document.querySelector('div');
+        const input = document.getElementById('nome');
+        const button = document.getElementById('pesquisar');
+        const resultado = document.getElementById('resultado');
+
+          const phonebook = [
+            { name : 'Chris', number : '1549' },
+            { name : 'Li Kang', number : '9634' },
+            { name : 'Anne', number : '9065' },
+            { name : 'Francesca', number : '3001' },
+            { name : 'Mustafa', number : '6888' },
+            { name : 'Tina', number : '4312' },
+            { name : 'Bert', number : '7780' },
+            { name : 'Jada', number : '2282' },
+            ]
+
+        button.addEventListener('click', () =>{
+
+            const name = input.value.trim();
+            let encontrado = false;
+            
+                    i = 0;
+                    while(i <phonebook.length ){
+            
+                        if(phonebook[i].name.toLowerCase() === name.toLowerCase()){
+                            resultado.textContent = `${phonebook[i].name}: ${phonebook[i].number}`
+                            encontrado = true;
+                            break;
+                        }
+            
+                        i++
+                    }
+            
+                    if(!encontrado){
+                        resultado.textContent = `${name} não encontrado`
+                    }
+        });
+    </script>
+
+</body>
+</html>
+
+<!-- Explicação:
+° Adicionei um input e um botão para pesquisa;
+° Usei p evento click do botão para execultar a pesquisa;
+° Usei o valor do input para pequisar no array phonebook;
+° Usei toLowerCase() para tornar a pesuisa case-insensitive.
+
+Nota:
+° Usei trim() para remover espaços em branco do início e fim do valor do input;
+° Usei o toLowerCase() para diferenciar letras maiúsculas e minúsculas. -->

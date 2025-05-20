@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várias Coisas</title>
+</head>
+<body>
+    
+    <div>
+        <section></section>
+    </div>
+
+    <script>
+                
+        // Final result should be 4633.33
+        // Add/update your code here
+
+        let result = 7 + 13 / 9 + 7;
+        let result2 = 100 / 2 * 6; 
+
+        result *= result2;
+        let finalResult = result.toFixed(2);
+        let finalNumber = parseFloat(finalResult);
+
+        const section = document.querySelector('section');
+
+        // Don't edit the code below here!
+
+        section.innerHTML = ' ';
+        const para1 = document.createElement('p');
+        para1.textContent = `Your finalResult is ${ finalResult }`;        
+        const para2 = document.createElement('p');
+        const finalNumberCheck = typeof finalNumber === 'number' ? 'finalNumber is a number type. Well done!' : `Ooops! finalNumber is not a number.`;
+        para2.textContent = finalNumberCheck;
+
+        section.appendChild(para1);
+        section.appendChild(para2);
+    
+    </script>
+
+</body>
+</html>
+
+<!-- ## Explicação
+- Multipliquei result e result2 usando a abreviação de atribuição *=.
+- Formatei result com duas casas decimais usando o método toFixed(2) e armazenei em finalResult.
+- Verifiquei o tipo de dado de finalResult e, como é uma string, usei parseFloat() para convertê-lo para um número e armazenei em finalNumber.
+
+## Nota
+- toFixed(2) formata o número com duas casas decimais, mas retorna uma string.
+- parseFloat() converte uma string para um número de ponto flutuante. -->

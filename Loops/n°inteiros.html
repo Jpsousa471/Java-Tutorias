@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Inteiros</title>
+</head>
+<body>
+    
+    <div>
+        <p></p>
+    </div>
+
+    <script>
+
+        const box = document.querySelector('div');
+        const para =  document.querySelector('p');
+
+       i = 500;
+
+       function isPrime(num){
+        if(num <= 1){
+            return false;
+        }
+
+        for(let i = 2; i <=Math.sqrt(num); i++){
+            if(num % i === 0){
+                return false;
+            }
+        }
+        return true;
+       }
+
+        
+        do {
+            if( isPrime(i)){
+                para.textContent += `${i}, `;
+            }
+            i--
+        } while(i > 1);
+    </script>
+
+</body>
+</html>
+
+<!-- ## Explicação
+- O loop do...while percorre os números de 500 a 2.
+- A função isPrime() é executada para cada número.
+- Se o número for primo, ele é adicionado ao textContent do parágrafo.
+- O número é decrementado em cada iteração do loop.
+- O loop continua enquanto i for maior que 1.
+- A função isPrime() verifica se um número é primo.
+- Ela retorna false se o número for menor ou igual a 1.
+- Ela verifica se o número tem divisores entre 2 e a raiz quadrada do número.
+- Se encontrar um divisor, retorna false. Caso contrário, retorna true.
+- A raiz quadrada de um número é o valor que, quando multiplicado por si mesmo, dá o número original.
+- Ao verificar divisores até a raiz quadrada do número, podemos reduzir significativamente o número de iterações necessárias para determinar se um número é primo.
+- Isso ocorre porque um número maior que a raiz quadrada teria um divisor correspondente menor que a raiz quadrada, que já teria sido verificado. -->
+

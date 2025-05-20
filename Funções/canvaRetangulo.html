@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="lala">
+        <canvas></canvas>
+    </div>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+            const x = 50;
+            const y = 60;
+            const width = 100;
+            const height = 75;
+            const color = 'blue';
+
+        
+        // Add your code here
+
+        const section = document.querySelector('.lala')
+
+
+        function drawRectangle(x, y, width, height, color){
+
+            ctx.fillStyle = color;
+            ctx.clearRect(0, 0, canvas.width, canvas.height); //Limpa a tela
+            ctx.fillRect(x, y, width, height); //Desenha o retângulo
+
+        }
+
+        canvas.width = 400 //Define o tamanho do canvas
+        canvas.height = 400
+
+        drawRectangle(x, y, width, height, color);
+        
+    </script>
+    
+</body>
+</html>

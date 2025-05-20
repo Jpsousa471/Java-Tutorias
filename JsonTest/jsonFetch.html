@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <section>
+
+        </section>
+    </div>
+
+    <script>
+        const section = document.querySelector('section');
+
+        let para1 = document.createElement('p');
+        let para2 = document.createElement('p');
+       
+        const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
+
+        fetch(requestURL)
+        .then(response => response.text())
+        .then(text => displayCatInfo(text))
+
+        function displayCatInfo(catString) {
+
+        const catData = JSON.parse(catString);
+
+        let motherInfo = 'The mother cats are called ';
+        let kittenInfo = '';
+        let total = 0;
+        let male = 0;
+        let female = 0;
+
+        //Loop pelas gatas mães
+        for (let i = 0; i< catData.length; i++){
+            if (i === catData.length - 1) {
+                motherInfo += `e ${catData[i].name}.`;
+            } else if (i === catData.length - 2) {
+                motherInfo += `${catData[i].name} `;
+            } else {
+                motherInfo += `${catData[i].name}, `;
+            }
+            //Loop pelos gatinhos
+            for (let j = 0; j < catData[i].kittens.length; j++){
+                total ++;
+                if(catData[i].kittens[j].gender === 'm'){
+                    male++;
+                } else{
+                    female++;
+                }
+            }
+        }
+
+        kittenInfo = `Há ${total} gatinhos no total; ${male} machos e ${female} fêmeas.`
+
+        // Add your code here
+
+        // Don't edit the code below here!
+
+        para1.textContent = motherInfo;
+        para2.textContent = kittenInfo;
+        }
+
+        section.appendChild(para1);
+        section.appendChild(para2);
+    
+    </script>
+
+</body>
+</html>
+
+  <!-- ## Explicação
+- A função displayCatInfo() analisa a string JSON em um objeto JavaScript usando JSON.parse().
+- Em seguida, ela loop pelas gatas mães e adiciona seus nomes à string motherInfo.
+- Dentro do loop pelas gatas mães, há um loop pelos gatinhos que soma o total de gatinhos e conta os machos e fêmeas.
+- As informações são então impressas nas variáveis motherInfo e kittenInfo, que são atribuídas aos parágrafos para1 e para2.
+
+## Nota
+- As linhas para1.textContent = motherInfo; e para2.textContent = kittenInfo; estão dentro da função porque o código é 
+assíncrono, ou seja, a função displayCatInfo() é chamada após a resposta do servidor ser recebida. Se as linhas estivessem
+fora da função, elas seriam executadas antes da resposta do servidor ser processada. -->

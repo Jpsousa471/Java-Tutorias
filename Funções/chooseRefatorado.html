@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Name</title>
+</head>
+<body>
+    
+    <div>
+        <button></button>
+    </div>
+
+    <script>
+        const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
+        const para = document.createElement('p');
+
+        // Add your code here
+
+        const section = document.querySelector('div');
+
+        const btn = document.querySelector('button');
+        
+        section.appendChild(btn);
+
+        btn.style.width = "50px";
+        btn.style.height = "50px"
+        btn.textContent = "Botão";
+
+        function random (min, max){
+           return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function chooseName (array){
+            return array[random(0, array.length)];
+        }
+
+
+        // Don't edit the code below here!
+
+        section.innerHTML = ' ';
+
+        section.appendChild(para);
+        para.textContent = chooseName(names);
+        
+            
+    </script>
+
+</body>
+</html>
